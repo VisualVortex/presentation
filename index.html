@@ -22,8 +22,12 @@
         .dim {
             margin: auto;
             position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
         }
+
         .grey {
             color: grey;
         }
@@ -69,9 +73,56 @@
     ЛУЧШЕ НАВЕРНО каждый представится когда будет выступать сам.
 </div>
 
+<section class="slide" id="build">
+    <div>
+        <h2>Сборка проекта</h2>
+
+        <div class="build">
+            <img src="img/and/nodejs.png"/>
+            <img src="img/and/webpack.png"/>
+            <br/>
+            <img src="img/and/babel.png"/>
+            <img src="img/and/stylus.png"/>
+        </div>
+    </div>
+</section>
+<div class="hide">
+    В начале поговорим, как же наш проект собирался и запускался. Мы решили воспользоваться последними достижениями
+    в языке ES, и писали наш проект в ES6, а так же использовали экспериментальный синтаксис ES7. Конечно, браузеры не
+    понимают такой код, поэтому мы собирали весь js код в один bundle.js файл с помощью webpack и babel.
+    Стили мы писали в нотации стилуса, который тем же webpack компилировался в обычный css файл, а для того,
+    чтобы наши стили поддерживали старые барузеры, мы использовали autoprefixer
+</div>
+
+
+<section class="slide" id="testing">
+    <div>
+        <h2>Тестирование и деплой компонентов</h2>
+
+        <div class="build">
+            <img src="img/and/karma.png"/>
+            <img src="img/and/jasmine.png"/>
+            <br />
+            <img src="img/and/heroku.png"/>
+            <img src="img/and/travis.png"/>
+        </div>
+    </div>
+</section>
+<div class="hide">
+    В конце проекта мы стали разбиратсья как же все эти компоненты протестировать,
+    чтобы не бояться изменений и иметь стабильный деплой который
+    в любой момент можно показать.
+    Для этого мы пытались сначала использовать jest, однако с ним возникли проблемы, во время использования наших
+    es6-7 модулей. Поэтому стали использовать проверенные технологии такие как karma и jasmine. Все модули естественно
+    собирались с помощью webpack и babel. Так же добавлен прекоммит хук, который не даст запушить бажный код, а если
+    он был даже запушен, то он не пройдет сборку в тревисе и не будет задеплоен на heroku.
+</div>
+
+
+
 <section class="slide" id="arch">
     <div>
-        <img src="img/ahitec.png" />
+        <img src="img/ahitec.png"/>
     </div>
 </section>
 <div class="hide">
@@ -98,11 +149,14 @@
     А теперь более подробно о реализации страницы чата
 </div>
 
-<section class="slide"><div>
-    <h2>Видеозвонок</h2>
-    <h2>Авторизация на Peer сервере</h2>
-    <img src="img/video1.png">
-</div></section>
+<section class="slide">
+    <div>
+        <h2>Видеозвонок</h2>
+
+        <h2>Авторизация на Peer сервере</h2>
+        <img src="img/video1.png">
+    </div>
+</section>
 <div class="hide">
     Теперь более подбробно о том как же удается связать пользователей чата для видеозвонка.
 
@@ -110,160 +164,193 @@
     После авторизации пользователь отправляет свой id для сохранения на сокетный сервер.
 
     Это создано с умыслом, что пользователь может создать видеозвонок только для определенных пользователей.
-    Например, как возможный вариант дальнейшего развития чата. Пользователь может забанить сообщения от другого пользователя,
-    соответственно и звонить он хочет всем в канале, кроме забаненых пользователей. Так же он не хочет получать звонки от этих пользователей
+    Например, как возможный вариант дальнейшего развития чата. Пользователь может забанить сообщения от другого
+    пользователя,
+    соответственно и звонить он хочет всем в канале, кроме забаненых пользователей. Так же он не хочет получать звонки
+    от этих пользователей
 </div>
 
-<section class="slide"><div>
-    <h2>Видеозвонок</h2>
-    <h2>Создание видеоконференции</h2>
-    <img src="img/video2.png">
-</div></section>
+<section class="slide">
+    <div>
+        <h2>Видеозвонок</h2>
+
+        <h2>Создание видеоконференции</h2>
+        <img src="img/video2.png">
+    </div>
+</section>
 <div class="hide">
     Когда пользователь хочет позвонить. Он запрашивает id доступных и разрешенных для звонка пользователей. После этого
     отправляет звонок на Peer сервер. Который сообщает пользователям с данными id что к ним поступил звонок.
     В результате чего устанавливается соединение между пользователями через api webrtc
 </div>
-<section class="slide"><div>
-    <h2>Работа в команде</h2>
-    <ul>
-        <li>
-            <b>Командная работа</b>
-        </li>
-        <li class="grey">
-            Парное программирование
-        </li>
-        <li class="grey">
-            Совместный GitHub
-        </li>
-        <li class="grey">
-            Удовольствие от учебы и работы в команде
-        </li>
-    </ul>
-</div></section>
+<section class="slide">
+    <div>
+        <h2>Работа в команде</h2>
+        <ul>
+            <li>
+                <b>Командная работа</b>
+            </li>
+            <li class="grey">
+                Парное программирование
+            </li>
+            <li class="grey">
+                Совместный GitHub
+            </li>
+            <li class="grey">
+                Удовольствие от учебы и работы в команде
+            </li>
+        </ul>
+    </div>
+</section>
 <div class="hide">
     Привет всем, я Дмитрий Емелин. И я расскажу вам о работе в команде
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_1_group_work.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_1_group_work.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     Мы собирались командой, обсуждали проект, планировали архитектуру, писали код вместе.
 </div>
-<section class="slide"><div>
-    <h2>Работа в команде</h2>
-    <ul>
-        <li>
-            Командная работа
-        </li>
-        <li>
-            <b>Парное программирование</b>
-        </li>
-        <li class="grey">
-            "Совместный GitHub"
-        </li>
-        <li class="grey">
-            Удовольствие от учебы и работы в команде
-        </li>
-    </ul>
-</div></section>
+<section class="slide">
+    <div>
+        <h2>Работа в команде</h2>
+        <ul>
+            <li>
+                Командная работа
+            </li>
+            <li>
+                <b>Парное программирование</b>
+            </li>
+            <li class="grey">
+                "Совместный GitHub"
+            </li>
+            <li class="grey">
+                Удовольствие от учебы и работы в команде
+            </li>
+        </ul>
+    </div>
+</section>
 <div class="hide">
     Мы практиковали парное программирование.
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_2_1_pair_andrei_begin.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_2_1_pair_andrei_begin.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     В первый шрикатон кодил с Андреем.
     Развернули впервые нод на проекте, установили монго, написали первый код который уже работал.
     Можно было отправлять и принимать сообщения.
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_2_2_pair_andrei_test.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_2_2_pair_andrei_test.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     В будние дни Андрей помог в написании тестов под нод. И я написал пару простых тестов.
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_2_3_pair_efim_search.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_2_3_pair_efim_search.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     Другой шрикатон парно программировал в Ефимом. Написали поиск сообщений и
     пользователей.
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_2_4_1_pair_jenya_adaptation.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_2_4_1_pair_jenya_adaptation.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     Последний шрикатон был за одним столом с Евгением. Изменяли стиль стартовой страницы.
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_2_4_2_pair_jenya_adaptation.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_2_4_2_pair_jenya_adaptation.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     А это рабочий вариант того что получилось у меня.
 </div>
-<section class="slide"><div>
-    <h2>Работа в команде</h2>
-    <ul>
-        <li>
-            Командная работа
-        </li>
-        <li>
-            Парное программирование
-        </li>
-        <li>
-            <b>Совместный GitHub</b>
-        </li>
-        <li class="grey">
-            Удовольствие от учебы и работы в команде
-        </li>
-    </ul>
-</div></section>
+<section class="slide">
+    <div>
+        <h2>Работа в команде</h2>
+        <ul>
+            <li>
+                Командная работа
+            </li>
+            <li>
+                Парное программирование
+            </li>
+            <li>
+                <b>Совместный GitHub</b>
+            </li>
+            <li class="grey">
+                Удовольствие от учебы и работы в команде
+            </li>
+        </ul>
+    </div>
+</section>
 <div class="hide">
     Так же мы совместно работали в гитхабе.
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_3_1_git.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_3_1_git.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     Создавали новую ветку для каждой фичи.
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_3_2_github_issues.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_3_2_github_issues.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     Ставили цели и принимали их на выполнение.
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_3_3_github_issues.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_3_3_github_issues.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     Цели разбивали на подзадачи и по завершению закрывали close коммитом
 </div>
-<section class="slide"><div>
-    <img class="dim" src="img/dim/dim_3_4_github_pull.jpg" alt="Shred">
-</div></section>
+<section class="slide">
+    <div>
+        <img class="dim" src="img/dim/dim_3_4_github_pull.jpg" alt="Shred">
+    </div>
+</section>
 <div class="hide">
     После завершения делали пул реквест. Члены команды его проверяли и мержили.
 </div>
-<section class="slide"><div>
-    <h2>Работа в команде</h2>
-    <ul>
-        <li>
-            Командная работа
-        </li>
-        <li>
-            Парное программирование
-        </li>
-        <li>
-            Совместный GitHub
-        </li>
-        <li>
-            <b>Удовольствие от учебы и работы в команде</b>
-        </li>
-    </ul>
-</div></section>
+<section class="slide">
+    <div>
+        <h2>Работа в команде</h2>
+        <ul>
+            <li>
+                Командная работа
+            </li>
+            <li>
+                Парное программирование
+            </li>
+            <li>
+                Совместный GitHub
+            </li>
+            <li>
+                <b>Удовольствие от учебы и работы в команде</b>
+            </li>
+        </ul>
+    </div>
+</section>
 <div class="hide">
     На последок хочу сказать что просто очень хорошо провели время.
     Познакомились с отличными парнями. Обменялись знаниями.
