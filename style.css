@@ -41,3 +41,17 @@
 #testing .build {
     text-align: center;
 }
+.full-width-img{
+    max-width: 100%;
+    max-height: 100%;
+    padding-bottom: 20px;
+}
+.totop-full-width{
+    margin-top: -50px;
+}
+#search-user-in-action{
+    max-height: 80%;
+    margin: 0 auto;
+    display: block;
+}
+    
