@@ -93,3 +93,21 @@
 #testing .build {
     text-align: center;
 }
+
+.dim {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.grey {
+    color: grey;
+}
+#send-file img {
+    width: 550px;
+    display: block;
+    margin: 0 auto;
+}
