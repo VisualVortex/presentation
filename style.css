@@ -93,7 +93,12 @@
 #testing .build {
     text-align: center;
 }
-
+.fallout {
+    width: 450px;
+    right: 50px;
+    top: 45px;
+    opacity: 0.8;
+}
 .dim {
     margin: auto;
     position: absolute;
