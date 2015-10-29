@@ -1,3 +1,8 @@
+.self {
+    color: white;
+    font-size: larger;
+}
+
 .half {
     display: inline-block;
     width: 49%;
