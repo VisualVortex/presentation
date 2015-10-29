@@ -16,122 +16,37 @@
     display: none;
 }
 
-#arch img {
-    margin-top: -67px;
-    display: inline-block;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.slide h2 + h2 {
-    font-size: 25px;
-    margin-top: -30px;
-    margin-bottom: 20px;
-    color: #444;
-    position: relative;
-}
-
 .absolute {
     position: absolute;
 }
 
-.chat-page,.scheme  {
-    width: 920px;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border: 1px solid #EEEEEE;
-}
-.scheme {
-    width: 800px;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-.flux-scheme {
-    width: 680px;
-    right: 32px;
-    z-index: 0;
-    bottom: 135px;
-}
-.logo-flux {
-    width: 183px;
-    top: 226px;
-    right: 146px;
-    z-index: 1;
-}
-.stylus {
-    width: 450px;
-    right: 150px;
-    bottom: 50px;
-}
-.webpack {
-    right: 140px;
-
-}
-.logo-react{
-    z-index: 1;
-    bottom: 105px;
-    right: 410px;
-}
-.flash {
-    width: 450px;
-    right: 100px;
-    bottom: 0;
+#video img {
+    max-width: 230px;
+    max-height: 164px;
 }
 
-#build img,
-#testing img {
-    max-width: 200px;
+#file img {
+    max-width: 350px;
+    max-height: 183px;
+}
+
+#account img {
+    max-width: 350px;
+    max-height: 205px;
+}
+
+#replay img {
+    max-width: 320px;
+    max-height: 180px;
+}
+
+.imgs img {
     max-height: 200px;
-    vertical-align: middle;
 }
 
-#build .build,
-#testing .build {
-    text-align: center;
-}
-.fallout {
-    width: 450px;
-    right: 50px;
-    top: 45px;
-    opacity: 0.8;
-}
-.dim {
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-.grey {
-    color: grey;
-}
-#send-file img {
-    width: 550px;
-    display: block;
-    margin: 0 auto;
-}
-
-#questions .mail {
-    height: 30px;
+.mail {
+    max-width: 20px;
+    max-height: 20px;
     vertical-align: middle;
     margin-right: 10px;
-}
-.full-width-img{
-    max-width: 100%;
-    max-height: 100%;
-    padding-bottom: 20px;
-}
-.totop-full-width{
-    margin-top: -50px;
-}
-#search-user-in-action{
-    max-height: 80%;
-    margin: 0 auto;
-    display: block;
 }
