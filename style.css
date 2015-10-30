@@ -4,6 +4,7 @@
     vertical-align: top;
 }
 
+
 #main {
     background: black;
 }
@@ -134,4 +135,8 @@
     max-height: 80%;
     margin: 0 auto;
     display: block;
+}
+h2 {
+    padding-top: -20px;
+    margin-top: -20px;
 }

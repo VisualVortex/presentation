@@ -23,601 +23,205 @@
     </div>
 </section>
 <div class="hide">
-    Всё привет! Наша команда называется Shred и мы рады представить вам наш чат для разработчиков
-</div>
-
-<section class="slide">
-    <div>
-        <h2>Участвовали</h2>
-
-        <div class="half">
-            <strong>Разработчики:</strong>
-            <ul>
-                <li>Евстропов Андрей</li>
-                <li>Емелин Дмитрий</li>
-                <li>Кузнецов Пётр</li>
-                <li>Малофеев Дмитрий</li>
-                <li>Пасианиди Ефим</li>
-                <li>Романенко Евгений</li>
-            </ul>
-        </div>
-        <div class="half">
-            <strong>Меторы:</strong>
-            <ul>
-                <li>Васильев Максим</li>
-                <li>Ерошин Евгений</li>
-                <li>Рождественский Роман</li>
-            </ul>
-        </div>
-    </div>
-</section>
-<div class="hide">
-    В проекте участвовало 6 разработчиков и 3 ментора. К сожалению, на презентации смогли присутствовать только
-    4. Итак начну рассказывать о проекте я, Евстропов Андрей
-</div>
-
-<section class="slide" id="arch">
-    <div>
-        <img src="img/ahitec.png"/>
-    </div>
-</section>
-
-<div class="hide">
-    На схеме приведён общий принцип работы приложения.
-    Когда пользователь заходит на наш сайт, его запрос направляется на сервер express, где проверяется
-    сессия пользователя, если сессии нет, то она устанавливается с помощью модуля express-session, если есть,
-    то сессия проверяется на привязку к пользователю с помощью Github passport.
-    Информация о текущих сессиях и пользователях хранится в базе данных.
-    Если пользователь не авторизирован, то он направляется на гитхаб для авторизации и возвращается обратно на наш сайт.
-    После успешной авторизации пользователя express отдает страницу чата.
-
-    Следующим шагом становится задача подключения чата к вебсокет серверу. В качестве сервера используется socket.io
-    Авторизация на котором осуществляется
-    так же как и в приложении в целом, через сессии и паспорт гитхаба. Что возможно благодаря использованию middle ware
-    связки socket.io-express.
-
-    Над клиентской socket.io библиотекой написана специльная надстройка для повышения уровня абстракции и проверки
-    данных, передаваемых в сообщениях. Например при создании сообщения необходимо проверить, что указан канал отправки
-    и текст сообщения.
-
-    Так же в нашем чате реализован видеозвонок и передача файлов, который возможен благодаря использованию технологии webrtc. Для этого
-    у нас создан отдельный сервер, который управляет webrtc подключениями между активными пользователями.
-
-    А теперь более подробно о реализации страницы чата
-</div>
-
-<section class="slide">
-    <div>
-        <h2>Немного о технологиях</h2>
-        <img class="absolute logo-react" src="img/romanenko/react-logo.png">
-        <img class="absolute flash" src="img/romanenko/flashforum.jpg">
-
-        <ul>
-            <li>
-                <b>React</b>
-            </li>
-            <li class="grey">
-                Flux
-            </li>
-            <li class="grey">
-                Babel
-            </li>
-            <li class="grey">
-                Stylus
-            </li>
-            <li class="grey">
-                Webpack
-            </li>
-        </ul>
-    </div>
-</section>
-
-<section class="slide">
-    <div>
-        <h2>Немного о технологиях</h2>
-
-
-        <img class=" absolute logo-flux" src="img/romanenko/flux_logo.svg">
-        <img class="absolute flux-scheme" src="img/romanenko/flux-diagram-white-background.png">
-
-        <ul>
-            <li class="grey">
-                React
-            </li>
-
-            <li>
-                <b>Flux</b>
-            </li>
-            <li class="grey">
-                Babel
-            </li>
-            <li class="grey">
-                Stylus
-            </li>
-
-            <li class="grey">
-                Webpack
-            </li>
-
-        </ul>
-    </div>
-</section>
-
-<section class="slide">
-    <div>
-        <h2>Немного о технологиях</h2>
-
-        <img class="absolute stylus" src="img/and/babel.png"/>
-
-        <ul>
-            <li class="grey">
-                React
-            </li>
-
-            <li class="grey">
-                Flux
-            </li>
-            <li>
-                <b>Babel</b>
-            </li>
-
-            <li class="grey">
-
-                Stylus
-            </li>
-
-            <li class="grey">
-                Webpack
-            </li>
-
-        </ul>
-    </div>
-</section>
-
-<section class="slide">
-    <div>
-        <h2>Немного о технологиях</h2>
-
-
-        <img class=" absolute stylus" src="img/romanenko/Stylus-logo.svg.png">
-
-        <ul>
-            <li class="grey">
-                React
-            </li>
-
-            <li class="grey">
-                Flux
-            </li>
-            <li class="grey">
-                Babel
-            </li>
-            <li>
-                <b>Stylus</b>
-            </li>
-
-            <li class="grey">
-                Webpack
-            </li>
-
-        </ul>
-    </div>
-</section>
-
-<section class="slide">
-    <div>
-        <h2>Немного о технологиях</h2>
-
-
-        <img class=" absolute webpack" src="img/romanenko/webpack.jpeg">
-
-        <ul>
-            <li class="grey">
-                React
-            </li>
-
-            <li class="grey">
-                Flux
-            </li>
-
-            <li class="grey">
-                Babel
-            </li>
-
-            <li class="grey">
-                Stylus
-            </li>
-
-            <li>
-                <b>Webpack</b>
-            </li>
-
-        </ul>
-    </div>
-</section>
-
-<section class="slide">
-    <div>
-        <h2>Страница приложения</h2>
-        <img class="chat-page absolute" src="img/romanenko/Page.png">
-
-
-    </div>
-</section>
-
-<section class="slide">
-    <div>
-        <h2>Основные компоненты приложения</h2>
-        <img class="chat-page absolute" src="img/romanenko/page-component.png">
-
-    </div>
-</section>
-
-
-<section class="slide">
-    <div>
-        <h2>Компонент: Список пользователей</h2>
-        <img class="scheme absolute" src="img/romanenko/list-user.png">
-    </div>
-</section>
-
-
-<section class="slide">
-    <div>
-        <h2>Компонент: Окно Чата</h2>
-        <img class="scheme absolute" src="img/romanenko/window.png">
-    </div>
-</section>
-
-<section class="slide">
-    <div>
-        <h2>Компонент: Textarea</h2>
-        <img class="scheme absolute" src="img/romanenko/text-area.png">
-    </div>
-</section>
-
-
-<section class="slide">
-    <div>
-        <h2>Компонент: Лист сообщений</h2>
-        <img class="scheme absolute" src="img/romanenko/list-message.png">
-    </div>
-</section>
-
-<div class="hide">
-    В начале поговорим, как же наш проект собирался и запускался. Мы решили воспользоваться последними достижениями
-    в языке ES, и писали наш проект в ES6, а так же использовали экспериментальный синтаксис ES7. Конечно, браузеры не
-    понимают такой код, поэтому мы собирали весь js код в один bundle.js файл с помощью webpack и babel.
-    Стили мы писали в нотации стилуса, который тем же webpack компилировался в обычный css файл, а для того,
-    чтобы наши стили поддерживали старые барузеры, мы использовали autoprefixer
-</div>
-
-<!--Ефим-->
-<section class="slide">
-    <div>
-        <h2>Редактирование сообщения</h2>
-        <img class="full-width-img" src="img/efim/edit-message-in-action.png">
-
-    </div>
-</section>
-<section class="slide">
-    <div>
-        <img class="full-width-img totop-full-width" src="img/efim/edit-message.png">
-    </div>
-</section>
-<section class="slide">
-    <div>
-        <h2>Поиск по сообщениям</h2>
-        <img class="full-width-img" src="img/efim/search-message-in-action.png">
-
-    </div>
-</section>
-<section class="slide">
-    <div>
-        <h2>Поиск по пользователям</h2>
-        <img class="full-width-img" id="search-user-in-action" src="img/efim/search-user-in-action.png">
-
-    </div>
-</section>
-<!--Ефим-->
-
-<section class="slide">
-    <div>
-        <h2>Видеозвонок</h2>
-
-        <h2>Авторизация на Peer сервере</h2>
-        <img src="img/video1.png">
-    </div>
-</section>
-<div class="hide">
-    Теперь более подбробно о том как же удается связать пользователей чата для видеозвонка.
-
-    При загрузке страницы чата пользователь автоматически отправляет запрос на peer сервер для авторизации на нем.
-    После авторизации пользователь отправляет свой id для сохранения на сокетный сервер.
-
-    Это создано с умыслом, что пользователь может создать видеозвонок только для определенных пользователей.
-    Например, как возможный вариант дальнейшего развития чата. Пользователь может забанить сообщения от другого
-    пользователя,
-    соответственно и звонить он хочет всем в канале, кроме забаненых пользователей. Так же он не хочет получать звонки
-    от этих пользователей
-</div>
-
-
-<section class="slide">
-    <div>
-        <h2>Видеозвонок</h2>
-
-        <h2>Создание видеоконференции</h2>
-        <img src="img/video2.png">
-    </div>
-</section>
-<div class="hide">
-    Когда пользователь хочет позвонить. Он запрашивает id доступных и разрешенных для звонка пользователей. После этого
-    отправляет звонок на Peer сервер. Который сообщает пользователям с данными id что к ним поступил звонок.
-    В результате чего устанавливается соединение между пользователями через api webrtc
-</div>
-
-
-<section class="slide" id="send-file">
-    <div>
-        <h2>Отправка файлов</h2>
-        <img src="img/and/dropzone.png">
-        <img src="img/and/newmessage.png">
-    </div>
-</section>
-<div class="hide">
-    При перетаскивании файла появляется зона посадки. Когда пользователь отпускает файл. Мы его считваем и кладем буффер
-    файлов. Далее идет запрос за peer id доступных пользователей. После этого мы отправялем сразу все файлы этим пользователям.
-    И отображаем в списке сообщений. Сообщения по передаче файлов не сохраняются в базу, т.к. передача происходит напрямую
-    между клиентами.
-</div>
-
-
-<section class="slide" id="testing">
-    <div>
-        <h2>Тестирование и деплой компонентов</h2>
-
-        <div class="build">
-            <img src="img/and/karma.png"/>
-            <img src="img/and/jasmine.png"/>
-            <br />
-            <img src="img/and/heroku.png"/>
-            <img src="img/and/travis.png"/>
-        </div>
-    </div>
-</section>
-
-<div class="hide">
-    В конце проекта мы стали разбиратсья как же все эти компоненты протестировать,
-    чтобы не бояться изменений и иметь стабильный деплой который
-    в любой момент можно показать.
-    Для этого мы пытались сначала использовать jest, однако с ним возникли проблемы, во время использования наших
-    es6-7 модулей. Поэтому стали использовать проверенные технологии такие как karma и jasmine. Все модули естественно
-    собирались с помощью webpack и babel. Так же добавлен прекоммит хук, который не даст запушить бажный код, а если
-    он был даже запушен, то он не пройдет сборку в тревисе и не будет задеплоен на heroku.
+    Привет! Я Дмитрий Емелин. Сейчас расскажу Вам про свои "Фичи" в нашем чате ШРЕД
 </div>
 
 <section class="slide">
     <div>
         <img class=" absolute fallout" src="img/dim/team.png">
-        <h2>Работа в команде</h2>
+        <h2>Самостоятельная работа</h2>
+        
         <ul>
             <li>
-                <b>Командная работа</b>
+                <b>Плотный Git/GitHub</b>
             </li>
             <li class="grey">
-                Парное программирование
+                Поправил баги, которые заметили у нас менторы.
             </li>
             <li class="grey">
-                Совместный GitHub
+                Попробовал привязать адаптивность.
             </li>
             <li class="grey">
-                Удовольствие от учебы и работы в команде
+                Ограничил размер сообщений.
+            </li>
+            <li class="grey">
+                Много запланировал - мало успел/сумел.
             </li>
         </ul>
     </div>
 </section>
 <div class="hide">
-    Привет всем, я Дмитрий Емелин. И я расскажу вам о работе в команде
+    Пытался как можно больше взаимодействовать с Гитхабом и использовать Гит по полной.
+    Ставил задачи. Назначал лейблы. Отправлял комменты через коммиты в задачу. Закрывал через коммит.
+    Делал пулреквест.
 </div>
+<section class="slide"><div>
+    <img class="dim" src="img/dim/dim_1_1_git.png" alt="Shred">
+</div></section>
+
 <section class="slide">
     <div>
-        <img class="dim" src="img/dim/dim_1_group_work.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    Мы собирались командой, обсуждали проект, планировали архитектуру, писали код вместе.
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_1_2_group_work_skype.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    Созванивались в Скайпе, планировали дальнейшие действия. Помогали друг другу.
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_1_3_group_work_slack.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    Постоянно использовали слэк, для быстрого контакта с командой
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_1_4_group_work_meet.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    В нем же назначали личные встречи в городе, что бы вместе более плотно заняться приложением.
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_1_5_group_work_chat_1.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    И кроме всего прочего мы использовали и наш чат, для командной работы
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_1_5_group_work_chat_2.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    Проверяли, обсуждали и тестировали чат вместе.
-</div>
-<section class="slide">
-    <div>
-        <h2>Работа в команде</h2>
-        <img class=" absolute fallout" src="img/dim/pair.png">
-        <ul>
-            <li>
-                Командная работа
-            </li>
-            <li>
-                <b>Парное программирование</b>
-            </li>
-            <li class="grey">
-                Совместный GitHub
-            </li>
-            <li class="grey">
-                Удовольствие от учебы и работы в команде
-            </li>
-        </ul>
-    </div>
-</section>
-<div class="hide">
-    кроме того Мы практиковали парное программирование.
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_2_1_pair_andrei_begin.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    В первый шрикатон кодил с Андреем.
-    Развернули впервые нод на проекте, установили монго, написали первый код который уже работал.
-    Можно было отправлять и принимать сообщения.
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_2_2_pair_andrei_test.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    В будние дни Андрей помог в написании тестов под нод. И я написал пару простых тестов.
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_2_3_pair_efim_search.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    Другой шрикатон парно программировал в Ефимом. Написали поиск сообщений и
-    пользователей. Попутно поняв принцип работы с react и flux
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_2_4_1_pair_jenya_adaptation.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    Последний шрикатон работали за одним столом с Евгением. Изменяли стиль стартовой страницы.
-    Делали ее более адаптивной при помощи media queries
-	А вот примерно то что получилось.
-</div>
-<section class="slide">
-    <div>
-        <h2>Работа в команде</h2>
+        <h2>Самостоятельная работа</h2>
         <img class=" absolute fallout" src="img/dim/github.png">
         <ul>
             <li>
-                Командная работа
+                Плотный Git/GitHub
             </li>
             <li>
-                Парное программирование
-            </li>
-            <li>
-                <b>Совместный GitHub</b>
+                <b>Поправил баги, которые заметили у нас менторы.</b>
             </li>
             <li class="grey">
-                Удовольствие от учебы и работы в команде
+                Попробовал привязать адаптивность.
+            </li>
+            <li class="grey">
+                Ограничил размер сообщений.
+            </li>
+            <li class="grey">
+                Много запланировал - мало успел/сумел.
             </li>
         </ul>
     </div>
 </section>
 <div class="hide">
-    Так же мы совместно работали в гитхабе.
+    Поправил баги, которые заметили у нас менторы.
 </div>
+<section class="slide"><div>
+    <img class="dim" src="img/dim/dim_2_1_scroll.png" alt="Shred">
+</div></section>
+<section class="slide"><div>
+    <img class="dim" src="img/dim/dim_2_2_align.png" alt="Shred">
+</div></section>
+
 <section class="slide">
     <div>
-        <img class="dim" src="img/dim/dim_3_1_git.jpg" alt="Shred">
+        <h2>Самостоятельная работа</h2>
+        <img class=" absolute fallout" src="img/dim/pair.png">
+        <ul>
+            <li>
+                Плотный Git/GitHub
+            </li>
+            <li>
+                Поправил баги, которые заметили у нас менторы.
+            </li>
+            <li>
+                <b>Попробовал привязать адаптивность.</b>
+            </li>
+            <li class="grey">
+                Ограничил размер сообщений.
+            </li>
+            <li class="grey">
+                Много запланировал - мало успел/сумел.
+            </li>
+        </ul>
     </div>
 </section>
 <div class="hide">
-    Создавали новую ветку для каждой фичи.
+    Попробовал привязать адаптивность.
 </div>
+<section class="slide"><div>
+    <img class="dim" src="img/dim/dim_3_1_adap.png" alt="Shred">
+</div></section>
+<section class="slide"><div>
+    <img class="dim" src="img/dim/dim_3_2_adap.png" alt="Shred">
+</div></section>
+<section class="slide"><div>
+    <img class="dim" src="img/dim/dim_3_3_adap.png" alt="Shred">
+</div></section>
+
 <section class="slide">
     <div>
-        <img class="dim" src="img/dim/dim_3_2_github_issues.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    Ставили цели и принимали их на выполнение.
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_3_3_github_issues.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    Цели разбивали на подзадачи и по завершению закрывали close коммитом
-</div>
-<section class="slide">
-    <div>
-        <img class="dim" src="img/dim/dim_3_4_github_pull.jpg" alt="Shred">
-    </div>
-</section>
-<div class="hide">
-    После завершения делали пул реквест.
-    Члены команды его проверяли и затем мы объединяли ветку с основной веткой master.
-</div>
-<section class="slide">
-    <div>
-        <h2>Работа в команде</h2>
+        <h2>Самостоятельная работа</h2>
         <img class=" absolute fallout" src="img/dim/good.png">
         <ul>
             <li>
-                Командная работа
+                Плотный Git/GitHub
             </li>
             <li>
-                Парное программирование
+                Поправил баги, которые заметили у нас менторы.
             </li>
             <li>
-                Совместный GitHub
+                Попробовал привязать адаптивность.
             </li>
             <li>
-                <b>Удовольствие от учебы и работы в команде</b>
+                <b>Ограничил размер сообщений.</b>
+            </li>
+            <li  class="grey">
+                Много запланировал - мало успел/сумел.
             </li>
         </ul>
     </div>
 </section>
 <div class="hide">
-    На последок хочу сказать что просто очень хорошо провели время.
-    Познакомились с отличными парнями. Обменялись знаниями.
-    Получили опыт парного программирования.
-    От всех - Благодарю менторов.
-    и Спасибо Яндекс за ШРИ.
+    Ограничил размер отправляемых и редактируемых сообщений. Как на сервере так и на клиенте.
+</div>
+<section class="slide"><div>
+    <img class="dim" src="img/dim/dim_4_1_git.png" alt="Shred">
+</div></section>
+<section class="slide">
+    <div>
+        <h2>Самостоятельная работа</h2>
+        <ul>
+            <li>
+                Плотный Git/GitHub
+            </li>
+            <li>
+                Поправил баги, которые заметили у нас менторы.
+            </li>
+            <li>
+                Попробовал привязать адаптивность.
+            </li>
+            <li>
+                Ограничил размер сообщений.
+            </li>
+            <li>
+                <b>Много запланировал - мало успел/сумел.</b>
+            </li>
+        </ul>
+    </div>
+</section>
+<div class="hide">
+    Много запланировал - мало успел/сумел. И связано это не с тем что 2 недели мало.
+    Просто такие обстоятельства. и...
+</div>
+<section class="slide"><div>
+    <img class="dim" src="img/dim/dim_5_1_git.png" alt="Shred">
+</div></section>
+<section class="slide">
+    <div>
+        <h2>Самостоятельная работа</h2>
+        <ul>
+            <li  class="grey">
+                Плотный Git/GitHub
+            </li>
+            <li  class="grey">
+                Поправил баги, которые заметили у нас менторы.
+            </li>
+            <li  class="grey">
+                Попробовал привязать адаптивность.
+            </li>
+            <li  class="grey">
+                Ограничил размер сообщений.
+            </li>
+            <li  class="grey">
+                Много запланировал - мало успел/сумел.
+            </li>
+            <li>
+                <b>На ШРИ понял, что очень слабые знания JS.</b>
+            </li>
+        </ul>
+    </div>
+</section>
+<div class="hide">
+    Слабые знания JS. На ШРИ понял, что очень слабые знания JS.
 </div>
 <section class="slide" id="questions">
     <div>
         <h2>Вопросы?</h2>
         <div>
-            <img src="img/site.png" class="mail"/><a href="https://shri-production.herokuapp.com/">shri-production.herokuapp.com</a>
+            <h3>Дмитрий Емелин</h3>
+            <img src="img/site.png" class="mail"/><a href="https://github.com/VisualVortex/production">github.com/VisualVortex/production</a>
             <br />
-            <img src="img/mail.png" class="mail"/><a href="mailto:shred15@yandex.ru">shred15@yandex.ru</a>
+            <img src="img/mail.png" class="mail"/><a href="mailto:too.live@yandex.ru">too.live@yandex.ru</a>
         </div>
     </div>
 </section>
